@@ -130,22 +130,18 @@ generateDummyContent();
 /*********************************************************/
 /* SET UP NAVIGATION (mouse+touch)                       */
 /*********************************************************/
-	var root = document.querySelector(".container");
+	var container = document.querySelector(".container");
+
 	document.addEventListener("click",onInput,false);
 	document.addEventListener("touchend",onInput,false);
 
 	function onInput(e){
 		if ( e.target.id.indexOf("link") > -1 ) {
 			var p = e.target.id.substr(4);
-			root.style.webkitTransform = "translate3d(-"+p+"00%,0,0)";
+			container.style.webkitTransform = "translate3d(-"+p+"00%,0,0)";
 			e.preventDefault();
 		}
 	}
-
-	document.addEventListener("scroll",function(e){
-		console.log("Scroll : " + e.target);
-	},false);
-
 
 /*********************************************************/
 /* GENERATE DUMMY CONTENT AND NAVIGATION LINKS           */
